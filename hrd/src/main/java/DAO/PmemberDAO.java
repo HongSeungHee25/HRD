@@ -82,10 +82,10 @@ public class PmemberDAO {
 	
 	//전체 회원 정보
 	public List<PmemberDTO> selectList() throws SQLException{
+		String sql = "select * from p_member order by custno";
 		Connection conn = OracleUtility.getConnection();
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
-		String sql = "select * from p_member order by custno";
 		
 		pstmt = conn.prepareStatement(sql);
 		rs = pstmt.executeQuery();
