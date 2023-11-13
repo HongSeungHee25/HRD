@@ -12,10 +12,10 @@
 	</header>
 	<nav>
 		<ul>
-			<li><a href="<%= request.getContextPath() %>/regist.jsp">회원등록</a></li>
-			<li><a href="../">회원목록조회/수정</a></li>
-			<li><a href="../">회원매출조회</a></li>
-			<li><a href="../">홈으로</a></li>
+			<li><a href="<%= request.getContextPath() %>/member/regView.jsp">회원등록</a></li>  <!-- 뷰  -> 처리   -->
+			<li><a href="<%= request.getContextPath() %>/member/list.jsp">회원목록조회/수정</a></li> <!--  처리 -> 뷰  -->
+			<li><a href="<%= request.getContextPath() %>/sale/sale.jsp">회원매출조회</a></li>
+			<li><a href="<%= request.getContextPath() %>">홈으로.</a></li>
 		</ul>
 	</nav>
 </body>
