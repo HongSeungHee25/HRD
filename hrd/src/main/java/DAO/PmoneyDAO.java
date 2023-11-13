@@ -19,16 +19,16 @@ public class PmoneyDAO {
 	}
 	
 	public List<PsaleDTO> selectTotal() throws SQLException{
-		String sql = "select mt.custno, custname, decode(grade, 'A','VIP', 'B', '일반', 'C', '직원') agrade, psum"
-				+ "from p_member mt "
-				+ "join("
-				+ "select custno, sum(price) psum"
-				+ "from p_money group by custno"
-				+ ")sale "
-				+ "on mt.custno = sale.custno"
-				+ "order by psum desc";
+		String sql = "select mt.custno, custname, decode(grade, 'A','VIP', 'B', '일반', 'C', '직원') agrade, psum\r\n"
+				+ "				from p_member mt\r\n"
+				+ "				join(\r\n"
+				+ "				select custno, sum(price) psum\r\n"
+				+ "				from p_money group by custno\r\n"
+				+ "				)sale \r\n"
+				+ "				on mt.custno = sale.custno\r\n"
+				+ "				order by psum DESC";
 		
-		List<PsaleDTO> list = new ArrayList<>();
+		List<PsaleDTO> list = new ArrayList<PsaleDTO>();
 		Connection conn = OracleUtility.getConnection();
 		PreparedStatement pstmt = conn.prepareStatement(sql);
 		ResultSet rs = pstmt.executeQuery();
