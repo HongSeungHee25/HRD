@@ -1,7 +1,22 @@
-만들어야 하는 jsp 파일
-header ▶ include
-footer ▶ include 
-index.jsp
+★★★★★중요 : ojdbc6.jar 파일 WEB-INF ▶ lib 에 꼭 넣기★★★★★ 
+Action 에서는 language 만 냅두고 전부 지우기
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+header.jsp ▶ header include
+footer.jsp ▶ footer include 
+fail.jsp ▶ 오류 alert 
+
+index.jsp ▶ 메인 화면 
+
+member -> list.jsp ▶ 회원 정보 리스트 Action(GET)
+member -> listView.jsp ▶ 회원 정보 리스트 View
+member -> regAction.jsp ▶ 회원 등록 Action(POST) 
+member -> regView.jsp ▶ 회원 등록 View
+member -> updateAction.jsp ▶ 회원 정보 수정 Action(POST) 
+member -> updateView.jsp ▶ 회원 정보 수정 View
+
+sale -> sale.jsp ▶ 회원 별 매출 Action(GET)
+sale -> saleView.jsp ▶ 회원 별 매출 View
 
 OracleUtility.java ▶ DB 연결 Utility
 PmemberDTO.java ▶ 회원 테이블 DTO
@@ -9,3 +24,7 @@ PmoneyDTO.java ▶ 매출관리 테이블 DTO
 PsaleDTO.java ▶ 총 매출 출력용 DTO
 PmemberDAO.java ▶ 회원 SQL DAO
 PmoneyDAO.java ▶ 매출 SQL DAO
+
+
+
+
