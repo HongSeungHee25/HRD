@@ -1,0 +1,64 @@
+-- 학생 테이블
+create table tbl_student1(
+	syear char(1) not null,		--학년
+	sclass char(2) not null,	--반
+	sno char(2) not null,		--번호
+	sname varchar2(20),			--이름
+	birth char(8), 				--생년월일
+	gender char(1),				--성별 남자(M), 여자(F)
+	tel1 char(3),				--전화1
+	tel2 char(4),				--전화2
+	tel3 char(4),				--전화3
+	constraint pk_student primary key (syear,sclass,sno)	--여러개의 PK지정방법
+);
+
+insert into tbl_student1 values ('1','01','01','김학생','20020101','F','010','1234','1001');
+insert into tbl_student1 values ('1','01','02','이학생','20020201','M','010','1234','1002');
+insert into tbl_student1 values ('1','01','03','박학생','20020301','M','010','1234','1003');
+insert into tbl_student1 values ('1','02','01','조학생','20020401','M','010','1234','1004');
+insert into tbl_student1 values ('1','02','02','유학생','20020501','M','010','1234','1005');
+insert into tbl_student1 values ('1','02','03','여학생','20020601','M','010','1234','1006');
+insert into tbl_student1 values ('1','03','01','남학생','20020701','F','010','1234','1007');
+insert into tbl_student1 values ('1','03','02','황학생','20020801','F','010','1234','1008');
+insert into tbl_student1 values ('1','03','03','전학생','20020901','F','010','1234','1009');
+
+-- 교사 테이블
+create table tbl_dept(
+	syear char(1) not null,	--학년
+	sclass char(2) not null,	--반
+	tname varchar2(20), 		--이름
+	constraint pk_tdept primary key (syear, sclass)
+);
+
+insert into tbl_dept values ('1','01','김교사');
+insert into tbl_dept values ('1','02','이교사');
+insert into tbl_dept values ('1','03','박교사');
+
+-- 성적 테이블
+create table tbl_score1(
+	syear char(1),
+	sclass char(2),
+	sno char(2),
+	kor number(3),
+	eng number(3),
+	mat number(3),
+	constraint fk_score foreign key (syear,sclass,sno)
+	references tbl_student1(syear,sclass,sno)
+);
+
+insert into tbl_score1 values ('1','01','01','50','50','50');
+insert into tbl_score1 values ('1','01','02','60','40','100');
+insert into tbl_score1 values ('1','01','03','70','70','70');
+insert into tbl_score1 values ('1','02','01','80','80','80');
+insert into tbl_score1 values ('1','02','02','50','50','50');
+insert into tbl_score1 values ('1','02','03','40','90','80');
+insert into tbl_score1 values ('1','03','01','70','70','70');
+insert into tbl_score1 values ('1','03','02','80','60','90');
+insert into tbl_score1 values ('1','03','03','90','80','70');
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+select * from tbl_student1;
+select * from tbl_dept;
+select * from tbl_score1;
+
+
